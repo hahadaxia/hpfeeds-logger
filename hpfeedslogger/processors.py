@@ -370,7 +370,7 @@ def suricata_events(identifier, payload):
 
     # extra suricata fields
     kwargs = {}
-    for field in ['action', 'signature_id', 'signature_rev']:
+    for field in ['action', 'signature_id', 'signature_rev','category']:
         kwargs['suricata_{}'.format(field)] = dec.d.get(field)
 
     return create_message(
