@@ -610,7 +610,8 @@ class HpfeedsMessageProcessor(object):
             if ignore_errors:
                 try:
                     message = processor(identifier, payload)
-                except:
+                except Exception,e:
+                    traceback.print_exc()
                     continue
             else:
                 message = processor(identifier, payload)
